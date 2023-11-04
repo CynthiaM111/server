@@ -1,0 +1,22 @@
+/node_modules
+/Courses
+/course-file
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+
+# .env.local
+# .env.development.local
+# .env.test.local
+# .env.production.local
+# .eslintcache
+
+# .env files
+.env
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
