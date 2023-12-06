@@ -26,6 +26,7 @@ const addDiscussion = async (req, res) => {
         const category = req.body.category;
         const title=req.body.title;
         const isAnonymous = req.body.isAnonymous;
+        const isPrivate=req.body.isPrivate;
         const course = await Course.findOne({_id: courseId}).exec()
 
         // Check if the user is a student
@@ -36,7 +37,7 @@ const addDiscussion = async (req, res) => {
             });
             
         }
-        const discussion = new Discussions({user: user, course: course, data: data, category: category, title:title, isAnonymous: isAnonymous});
+        const discussion = new Discussions({user: user, course: course, data: data, category: category, title:title, isAnonymous: isAnonymous, isPrivate:isPrivate});
         
         await discussion.save()
         res.status(201).send(discussion)

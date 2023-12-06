@@ -32,6 +32,11 @@ const discussionsSchema = new mongoose.Schema(
             enum: ['Yes','No'],
             required:true,
         },
+        isPrivate: {
+            type: String,
+            enum: ['Yes','No'],
+            required:true,
+        },
 
         responseTimes: [{ type: Number }], // Store response times in milliseconds
     
