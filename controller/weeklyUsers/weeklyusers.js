@@ -70,10 +70,12 @@ const calculateWeeklyAverageResponseTime = async () => {
 //     console.log('Running the weekly response time');
 //     await calculateQuestionResponseTime();
 //   });
-cron.schedule('0 3 * * 0', async () => {
-    console.log('Running the weekly update');
-    await calculateWeeklyAverageResponseTime();
-    });
+// 
+cron.schedule('*/5 * * * *', async () => {
+  console.log('Running the task every 5 minutes');
+  await calculateWeeklyAverageResponseTime();
+});
+
 
 
 

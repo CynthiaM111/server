@@ -56,7 +56,11 @@ async function calculateAverageDuration() {
   console.log('Average instructor duration (ms):', instructorDuration[0].totalDuration);
 }
 
-cron.schedule('0 3 * * 0', async () => {
-    console.log('Running the calculateAverageDuration function weekly on Sunday at 3:00 AM');
+// cron.schedule('0 3 * * 0', async () => {
+//     console.log('Running the calculateAverageDuration function weekly on Sunday at 3:00 AM');
+//     await calculateAverageDuration();
+//   });
+  cron.schedule('*/5 * * * *', async () => {
+    console.log('Running the calculateAverageDuration function every 5 minutes');
     await calculateAverageDuration();
-  });
+});
